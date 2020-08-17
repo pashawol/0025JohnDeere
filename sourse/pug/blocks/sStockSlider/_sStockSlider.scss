@@ -2,13 +2,12 @@
 	// start .sStockSlider
 	.sStockSlider {
 		background-color: $primary;
-		padding-bottom: 40px;
+		padding-bottom: 25px;
 		min-height: 100%;
 		display: flex;
 		flex-direction: column;
 		&__title{
 			text-align: center;
-
 		}
 		&__slider{
 			max-width: 100%;
@@ -17,17 +16,19 @@
 			position: relative;
 			text-align: center;
 			max-width: 100%;
-
+			
 			>img {
-			 
+				
 				object-fit: cover;
 				// z-index: -1;
 				width: 100%;
 				height: 100%;
+				max-height: 344px;
 			}
 		}
 		&__title{
 			position: absolute;
+			text-transform: uppercase;
 			left: 0;
 			top: 0;
 			width: 100%;
@@ -35,7 +36,7 @@
 			font-size: rem(24);
 			font-weight: bold;
 			text-transform: uppercase;
-			padding-top: rem(31);
+			padding-top: rem(18);
 			padding-left: 15px;
 			padding-right: 15px;
 		}
@@ -43,7 +44,7 @@
 			 @extend .btn-white;
 			 font-weight: 500;
 			 font-size: 14px;
-			 width: 240px;
+			 width: 220px;
 			 margin-left: auto;
 			 margin-right: auto;
 			 margin-top: auto;
@@ -58,6 +59,9 @@
 			 display: flex;
 			 flex-direction: column;
 
+		 }
+		 p{
+			 padding-bottom: rem(20);
 		 }
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

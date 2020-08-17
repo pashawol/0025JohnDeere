@@ -2,16 +2,15 @@
 	// start .sProd
 	.sProd {
 		background-color: #000000;
-		padding: rem(40) 0;
+		padding: rem(70) 0 rem(20);
 		.row{
 			justify-content: center;
-			@include roww(45px);
+			@include roww(40px);
 		}
 		.col-auto{
 			// justify-content: center;
 			display: flex;
-			font-size: 11px;
-			font-weight: bold;
+			font-size: 12px; 
 			flex-direction: column;
 			margin-bottom: 30px;
 			text-align: center;

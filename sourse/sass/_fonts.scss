@@ -3,7 +3,7 @@ $default-font: "JDSansPro";
 $addr: '../fonts/';
 $file-format: woff2;
 
-@include font-face ($default-font, $addr + "JDSansPro-CondBook", $file-formats: $file-format);
+@include font-face ($default-font, $addr + "JDSansPro-Book", $file-formats: $file-format);
 @include font-face ($default-font, $addr + "JDSansPro-CondBold", bold, $file-formats: $file-format);
 @include font-face ($default-font, $addr + "JDSansPro-Medium", 500, $file-formats: $file-format);
 @include font-face ($default-font, $addr + "JDSansPro-Semibold", 600, $file-formats: $file-format);

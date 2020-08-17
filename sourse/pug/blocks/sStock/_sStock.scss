@@ -5,9 +5,10 @@
 		display: flex;
 		flex-direction: column;
 		min-height: rem(474);
+		padding-top: rem(25);
 		padding-left: 15px;
 		padding-right: 15px;
-		padding-bottom: 40px;
+		padding-bottom: 30px;
 		@include media-breakpoint-up(md) {
 
 			min-height: 100%;
@@ -25,6 +26,7 @@
 			max-width: 220px;
 			margin-left: auto;
 			font-size: rem(21);
+			text-transform: uppercase;
 		}
 		.btn{
 			@extend .btn-primary;
@@ -37,6 +39,10 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+			// padding:;
+			padding-top: 0;
+			padding-bottom: 0;
+			height: rem(49);
 		}
 		 
 	@include media-breakpoint-up(xl) {}
