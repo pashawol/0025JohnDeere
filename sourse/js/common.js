@@ -229,75 +229,97 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
+	var x = window.location.host;
 	let screenName;
-	screenName = 'main.jpg';
-	screenName
-		? $(".main-wrapper").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`)
-		: '';
-	// /добавляет подложку для pixel perfect
-
-
-	function whenResize() {
-
-		const topH = document.querySelector('header').scrollHeight;
-		let stickyElement = document.querySelector('.top-nav')
-		window.onscroll = () => {
-			if ($(window).scrollTop() > topH) {
-
-				stickyElement.classList.add('fixed');
-			} else {
-				stickyElement.classList.remove('fixed');
-			}
-		};
-
+	screenName = '1.png';
+	if (screenName && x === "localhost:3000") { 
+		$(".main-wrapper").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
+		// /добавляет подложку для pixel perfect
 
-	window.addEventListener('resize', () => {
-		whenResize();
-
-	}, { passive: true });
-
-	whenResize();
+ 
 
 
-	let defaultSl = {
-		spaceBetween: 0,
+	let defaultSl = { 
 		lazy: {
 			loadPrevNext: true,
 		},
 		watchOverflow: true,
-		spaceBetween: 0,
+	
 		loop: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-		pagination: {
-			el: ' .swiper-pagination',
-			type: 'bullets',
-			clickable: true,
-			// renderBullet: function (index, className) {
-			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-			// }
-		},
+		// navigation: {
+		// 	nextEl: '.swiper-button-next',
+		// 	prevEl: '.swiper-button-prev',
+		// },
+		// pagination: {
+		// 	el: ' .swiper-pagination',
+		// 	type: 'bullets',
+		// 	clickable: true,
+		// 	// renderBullet: function (index, className) {
+		// 	// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+		// 	// }
+		// },
 	}
 
 	const swiper4 = new Swiper('.sBanners__slider--js', {
 		// slidesPerView: 5,
 		...defaultSl,
+		spaceBetween: 0,
 		slidesPerView: 'auto',
 		freeMode: true,
 		loopFillGroupWithBlank: true,
 		touchRatio: 0.2,
 		slideToClickedSlide: true,
 		freeModeMomentum: true,
-
+		
 	});
-	// modal window
-
-};
-if (document.readyState !== 'loading') {
-	eventHandler();
-} else {
-	document.addEventListener('DOMContentLoaded', eventHandler);
-}
+	
+	$(".slider--js").each(function () {
+		
+		const swiper5 = new Swiper($(this), {
+			// slidesPerView: 5,
+			...defaultSl,
+			
+			slidesPerView: 1,  
+			pagination: {
+				el: $(this).find(' .swiper-pagination'),
+				type: 'bullets',
+				clickable: true, 
+			},
+		});
+	})
+		const swiper6 = new Swiper('.sCarusel__slider--js', {
+			// slidesPerView: 5,
+			...defaultSl,
+			slidesPerView: 1,  
+			spaceBetween: 7,
+			
+			navigation: {
+				nextEl: '.sCarusel .swiper-button-next',
+				prevEl: '.sCarusel .swiper-button-prev',
+			},
+			breakpoints: {
+				
+				480: {
+					slidesPerView: 2
+				},
+				576: {
+					slidesPerView: 3
+				},
+				992: {
+					slidesPerView: 4
+				},
+				
+			}
+		});
+	
+		
+		// modal window
+		
+	};
+	if (document.readyState !== 'loading') {
+		eventHandler();
+	} else {
+		document.addEventListener('DOMContentLoaded', eventHandler);
+	}
+	

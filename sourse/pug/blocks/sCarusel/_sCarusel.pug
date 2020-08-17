@@ -1,0 +1,23 @@
+mixin sCarusel()
+	// start sCarusel
+	+b.SECTION.sCarusel.section#sCarusel&attributes(attributes) 
+		+b.section-title.text-center
+			h2 Подобрать технику для ваших задач:
+			
+		+e.slider--js.swiper-container
+			.swiper-wrapper
+				mixin slide(i,t)
+					+e.slide.swiper-slide
+						+e.item(href="#")
+							img.object-fit-js.swiper-lazy(src="#" data-src=`img/@2x/slide-${i}.jpg`, alt="")
+							+e.DIV.title
+								span= t
+				+slide('1','Дорожное строительство')
+				+slide('2','Нефтегазовая промышленность')
+				+slide('3','Промышленное строительство')
+				+slide('4','Жилищное и коммунальное строительство')
+				+slide('4','Прокладка подземных коммуникаций')
+				+slide('4','Вскрышные работы')
+				//- +slide('','')
+			+arrow()
+	// end sCarusel

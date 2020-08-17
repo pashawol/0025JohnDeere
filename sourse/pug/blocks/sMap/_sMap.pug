@@ -1,0 +1,41 @@
+mixin sMap()
+	// start sMap
+	+b.SECTION.sMap#sMap&attributes(attributes) 
+		.row.g-0
+			.col-md-6
+				+e.map-wrap
+					img.img(src="img/@2x/mao.png", alt="")
+			+e.col.col-md-6
+				h2 Найти ближайшего к&nbsp;вам дилера или сервисный центр
+				form
+					+e.input-wrap
+						input.input(type="text" placeholder="Москва")
+						button.button(type="submit") 
+				+e.caption-place
+					+e.title ООО «Агро-Строительные Технологии»
+
+					p 
+						span.label.bg-white Обслуживание
+						span.label.bg-dark.text-white   Запчасти
+						br
+						| Московская обл., Одинцовский р-н, р. п. Новоивановское,
+						br
+						| Можайское шоссе, д. 166,
+						br
+						| Москва
+					+e.cont
+						.row
+							.col-auto
+								a.text-body(href="tel:+74995580123")
+									img(src="img/@2x/icon-1.png", alt="")
+									| + 7 499 558 01 23
+							.col-auto
+								a.text-body(href="www.aсt.su")
+									img(src="img/@2x/icon-2.png", alt="")
+									| www.aсt.su
+							.col-auto
+								a.text-body(href="mailto:info@аct.su")
+									img(src="img/@2x/icon-3.png", alt="")
+									| info@аct.su
+
+	// end sMap

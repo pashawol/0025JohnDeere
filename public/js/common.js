@@ -39,7 +39,7 @@ var JSCCommon = {
 		$.fancybox.defaults.backFocus = false;
 		var linkModal = document.querySelectorAll('.link-modal');
 
-		if (linkModal) {
+		function addData() {
 			linkModal.forEach(function (element) {
 				element.addEventListener('click', function () {
 					var modal = document.querySelector(element.getAttribute("href"));
@@ -48,8 +48,7 @@ var JSCCommon = {
 					function setValue(val, elem) {
 						if (elem && val) {
 							var el = modal.querySelector(elem);
-							el.tagName == "INPUT" ? el.value = val : el.innerHTML = val;
-							console.log(modal.querySelector(elem).tagName);
+							el.tagName == "INPUT" ? el.value = val : el.innerHTML = val; // console.log(modal.querySelector(elem).tagName)
 						}
 					}
 
@@ -60,6 +59,8 @@ var JSCCommon = {
 				});
 			});
 		}
+
+		if (linkModal) addData();
 	},
 	// /modalCall
 	toggleMenu: function toggleMenu() {
@@ -228,8 +229,6 @@ var JSCCommon = {
 var $ = jQuery;
 
 function eventHandler() {
-	var _defaultSl;
-
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
@@ -240,52 +239,71 @@ function eventHandler() {
 	JSCCommon.animateScroll(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
-	var screenName = 'main.jpg';
-	screenName ? $(".main-wrapper").after("<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>")) : ''; // /добавляет подложку для pixel perfect
+	var x = window.location.host;
+	var screenName;
+	screenName = '1.png';
 
-	function whenResize() {
-		var topH = document.querySelector('header').scrollHeight;
-		var stickyElement = document.querySelector('.top-nav');
+	if (screenName && x === "localhost:3000") {
+		$(".main-wrapper").after("<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
+	} // /добавляет подложку для pixel perfect
 
-		window.onscroll = function () {
-			if ($(window).scrollTop() > topH) {
-				stickyElement.classList.add('fixed');
-			} else {
-				stickyElement.classList.remove('fixed');
-			}
-		};
-	}
 
-	window.addEventListener('resize', function () {
-		whenResize();
-	}, {
-		passive: true
-	});
-	whenResize();
-	var defaultSl = (_defaultSl = {
-		spaceBetween: 0,
+	var defaultSl = {
 		lazy: {
 			loadPrevNext: true
 		},
-		watchOverflow: true
-	}, _defineProperty(_defaultSl, "spaceBetween", 0), _defineProperty(_defaultSl, "loop", true), _defineProperty(_defaultSl, "navigation", {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	}), _defineProperty(_defaultSl, "pagination", {
-		el: ' .swiper-pagination',
-		type: 'bullets',
-		clickable: true // renderBullet: function (index, className) {
-		// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-		// }
+		watchOverflow: true,
+		loop: true // navigation: {
+		// 	nextEl: '.swiper-button-next',
+		// 	prevEl: '.swiper-button-prev',
+		// },
+		// pagination: {
+		// 	el: ' .swiper-pagination',
+		// 	type: 'bullets',
+		// 	clickable: true,
+		// 	// renderBullet: function (index, className) {
+		// 	// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+		// 	// }
+		// },
 
-	}), _defaultSl);
-	var swiper4 = new Swiper('.color-slider', _objectSpread(_objectSpread({}, defaultSl), {}, {
+	};
+	var swiper4 = new Swiper('.sBanners__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		spaceBetween: 0,
 		slidesPerView: 'auto',
 		freeMode: true,
 		loopFillGroupWithBlank: true,
 		touchRatio: 0.2,
 		slideToClickedSlide: true,
 		freeModeMomentum: true
+	}));
+	$(".slider--js").each(function () {
+		var swiper5 = new Swiper($(this), _objectSpread(_objectSpread({}, defaultSl), {}, {
+			slidesPerView: 1,
+			pagination: {
+				el: $(this).find(' .swiper-pagination'),
+				type: 'bullets',
+				clickable: true
+			}
+		}));
+	});
+	var swiper6 = new Swiper('.sCarusel__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		slidesPerView: 1,
+		spaceBetween: 7,
+		navigation: {
+			nextEl: '.sCarusel .swiper-button-next',
+			prevEl: '.sCarusel .swiper-button-prev'
+		},
+		breakpoints: {
+			480: {
+				slidesPerView: 2
+			},
+			576: {
+				slidesPerView: 3
+			},
+			992: {
+				slidesPerView: 4
+			}
+		}
 	})); // modal window
 }
 

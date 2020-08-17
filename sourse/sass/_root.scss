@@ -1,23 +1,17 @@
 :root {
 	--animate-delay: 1.2s;
 	--fontSizeBase: #{$em-base};
-	@include media-breakpoint-up(md) {
-
-		--sPT: #{rem(80)};
-		--sPB: #{rem(90)};
-		--sTPB: #{rem(40)};
-	}
-
-	--sPT: #{rem(80 / 2)};
-	--sPB: #{rem(90 / 2)};
-	--sTPB: #{rem(40 / 2)};
+ 
+	--sPT: #{rem(14)};
+	--sPB: #{rem(22)};
+	// --sTPB: #{rem(40 / 2)};
 
 
-		--swiperArrowSize: #{rem(68)};
+		--swiperArrowSize: #{rem(45)};
 		--swiperArrowPosition: calc(-1 * var(--swiperArrowSize) / 2);
 		--swiperBorderColorDef: var(--bs-primary);
-		--swiperColorDef: var(--bs-primary);
-		--swiperBgDef: #ffffff;
+		--swiperColorDef: #ffffff;
+		--swiperBgDef: var(--bs-primary);
 	
 }
 

@@ -37,6 +37,9 @@ html {
 body {
 	min-width: 320px;
 	position: relative;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 
 	&::before {
 		content: '';
@@ -117,6 +120,11 @@ body {
 	overflow: hidden;
 	min-height: 100vh;
 	min-height: calc(var(--vh, 1vh) * 100);
+	margin-left: auto;
+	margin-right: auto;
+	background-repeat: no-repeat;
+	max-width: 1025px;
+	// background-image: url(../img/@2x/);
 }
 
 .slick-slide img {
@@ -274,9 +282,7 @@ input::-webkit-inner-spin-button {
 .swiper-button-hand {
 	width: var(--swiperArrowSize);
 	height: var(--swiperArrowSize);
-	border-radius: 50%;
-	background-color: var(--swiperBgDef);
-	border: 2px solid var(--swiperBorderColorDef);
+	border-radius: 50%; 
 	@include bgs;
 	z-index: 300;
 	outline: none !important;
@@ -284,14 +290,13 @@ input::-webkit-inner-spin-button {
 	background-image: none;
 	margin: 0;
 	@include a-cent(y);
-	color: var(--swiperColorDef);
-	box-shadow: 0 15px 60px rgba(0, 0, 0, 0.1);
+	color: var(--swiperColorDef); 
 	margin-top: calc(-1 * var(--swiperArrowSize) * 0.4);
 	@include mt;
 
 	&:hover {
-		background-color: $primary;
-		border-color: $primary;
+		// background-color: $primary;
+		// border-color: $primary;
 		color: var(--swiperBgDef);
 	}
 
@@ -300,7 +305,7 @@ input::-webkit-inner-spin-button {
 	}
 
 	&::after {
-		display: none;
+		// display: none;
 	}
 
 	@include media-breakpoint-up(lg) {}
@@ -322,10 +327,11 @@ input::-webkit-inner-spin-button {
 
 	&-bullet {
 		opacity: 1;
-		width: 8px;
-		height: 8px;
+		width: 18px;
+		height: 18px;
 		border-radius: 50%;
-		background-color: $secondary;
+		background-color: transparent;
+		border: 3px solid #ffffff;
 		outline: none !important;
 		@include mt;
 		margin-left: rem(8);
@@ -411,3 +417,4 @@ img.img-bg,
 iframe {
 	border: none;
 }
+ 

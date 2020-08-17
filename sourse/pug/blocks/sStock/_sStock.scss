@@ -1,0 +1,63 @@
+
+	// start .sStock
+	.sStock {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		min-height: rem(474);
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-bottom: 40px;
+		@include media-breakpoint-up(md) {
+
+			min-height: 100%;
+		}
+		> img{
+			position: absolute;
+			left: 0;
+			top: 0;
+			object-fit: cover;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+		}
+		h2{
+			max-width: 220px;
+			margin-left: auto;
+			font-size: rem(21);
+		}
+		.btn{
+			@extend .btn-primary;
+			font-weight: 500;
+			font-size: 14px;
+			width: 240px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		 
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+
+} // end.sStock

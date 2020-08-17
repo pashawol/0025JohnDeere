@@ -1,9 +1,20 @@
 mixin topLine()
 	// start topLine
-	+b.SECTION.topLine.section#topLine&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 topLine
-				
-			.row
+	+b.topLine&attributes(attributes) 
+		.row
+			.col-lg.col-sm-auto.col
+				+e.logo
+					a(href="/")
+						img.res-i(src="img/@2x/logo.png", alt="")
+			+e.col.col-sm.col-auto
+				.row
+					.col-6
+						+e.link.text-body(href="#") 
+							img(src="img/@2x/calc.png", alt="")
+							span.d-none.d-sm-inline покупка и финансирование
+
+					.col-6
+						+e.link.text-body(href="#")
+							img(src="img/@2x/mark.png", alt="")
+							span.d-none.d-sm-inline где приобрести технику?
 	// end topLine

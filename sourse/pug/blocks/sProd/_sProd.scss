@@ -1,0 +1,55 @@
+
+	// start .sProd
+	.sProd {
+		background-color: #000000;
+		padding: rem(40) 0;
+		.row{
+			justify-content: center;
+			@include roww(45px);
+		}
+		.col-auto{
+			// justify-content: center;
+			display: flex;
+			font-size: 11px;
+			font-weight: bold;
+			flex-direction: column;
+			margin-bottom: 30px;
+			text-align: center;
+			text-transform: uppercase;
+			color: #ffffff;
+		}
+		&__img-wrap{
+			display: block;
+			height: 50px;
+			margin-bottom: 5px;
+			 
+			.img-svg{
+				height: 50px;
+				path{
+					fill: $primary !important;
+				}
+			}
+		}
+		 
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+
+} // end.sProd

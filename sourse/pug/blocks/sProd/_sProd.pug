@@ -1,0 +1,18 @@
+mixin sProd()
+	// start sProd
+	+b.sProd.section#sProd&attributes(attributes)
+		.container-fluid 
+			.row
+				mixin i(x, t)
+					a.col-auto(href="#")
+						+e.DIV.img-wrap
+							img(src=`img/@2x/prod-${x}.png` , alt="")
+						+e.DIV.title= t
+				+i('1','АВТОГРЕЙДЕРЫ')
+				+i('2','БУЛЬДОЗЕРЫ')
+				+i('3','ЭКСКАВАТОРЫ')
+				+i('4','ЭКСКАВАТОРЫ ПОГРУЗЧИКИ')
+				+i('5','ПОГРУЗЧИКИ')
+				+i('6','МИНИ ПОГРУЗЧИКИ')
+				+i('7','САМОСВАЛЫ')
+	// end sProd

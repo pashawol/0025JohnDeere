@@ -1,10 +1,9 @@
 mixin headerBlock()
-	// start headerBlock
-	+b.headerBlock.section#headerBlock&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-
-			.row
-						
+	// start headerBlock 
+	+b.slider--js.swiper-container
+		.swiper-wrapper
+			- for (var x = 0; x < 3; x++)
+				+e.slide.swiper-slide
+					img.res-i.object-fit-js(src="img/@2x/slide.jpg", alt="")
+		.swiper-pagination
 	// end headerBlock

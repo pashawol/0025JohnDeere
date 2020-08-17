@@ -1,0 +1,19 @@
+mixin sStockSlider()
+	// start sStockSlider
+	+b.SECTION.sStockSlider#sStockSlider&attributes(attributes)
+		+e.slider--js.swiper-container(class="slider--js")
+			.swiper-wrapper
+				- for (var x = 0; x < 3; x++)
+					+e.slide.swiper-slide
+						+e.title Моторное масло John Deere  Plus-50 II «5W-40»
+						img.object-fit-js(src="img/@2x/stock-slide.jpg", alt="")
+			.swiper-pagination
+		+e.footer
+			p 
+				strong Всесезонная защита 
+				| Вашей техники.
+			a.btn(href="#") 
+				img(src="img/@2x/Layer_22.png", alt="")
+				| УЗНАТЬ ПОДРОБНОСТИ 
+				span >
+	// end sStockSlider
